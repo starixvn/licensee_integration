@@ -10,7 +10,7 @@ namespace Nexcel.LRF.Integration.Configurations
     public class IntegrationSettings : ConfigurationSection, IIntegrationSettings
     {
         private static IntegrationSettings settings = ConfigurationManager.GetSection("Nexcel.LRF.Integration") as IntegrationSettings;
-        private static readonly Regex UrlRegularExpression = new Regex("(http):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
+        private static readonly Regex UrlRegularExpression = new Regex("(http|https):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
         public static IntegrationSettings Settings
         {
             get

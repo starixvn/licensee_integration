@@ -11,7 +11,7 @@ namespace Nexcel.LRF.Integration
     public class UrlFactory : IUrlFactory
     {
         private const string EncryptedParamPattern = "licName={0}&username={1}&pwd={2}&timestamp={3}&loginurl={4}&lang={5}";
-        private readonly Regex UrlRegularExpression = new Regex("(http):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
+        private readonly Regex UrlRegularExpression = new Regex("(http|https):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
 
         private IIntegrationSettings _settings;
         public UrlFactory()
