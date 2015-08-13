@@ -24,7 +24,7 @@ public partial class _Login : System.Web.UI.Page
     private void ImportUser()
     {
         ListUsers = new List<string>();
-        ListUsers.Add("spon01");
+        ListUsers.Add("12bet01");
         ListUsers.Add("spon02");
 		ListUsers.Add("spon03");
 		ListUsers.Add("spon07");
@@ -40,7 +40,7 @@ public partial class _Login : System.Web.UI.Page
         if (ReferenceEquals(null, ListUsers))
             ImportUser();
 
-        return (ListUsers.Contains(userName) && password == "1234");
+        return (ListUsers.Contains(userName) && password == "2conthanhlanhcon");
     }
 
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
