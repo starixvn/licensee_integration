@@ -1,7 +1,0 @@
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\bin\Release\Nexcel.LRF.Integration.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\bin\Release\Nexcel.LRF.Integration.pdb
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\bin\Release\RSACryptoPad.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\obj\Release\Nexcel.LRF.Integration.Resources.resources
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\obj\Release\Nexcel.LRF.Integration.csproj.GenerateResource.Cache
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\obj\Release\Nexcel.LRF.Integration.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\obj\Release\Nexcel.LRF.Integration.pdb

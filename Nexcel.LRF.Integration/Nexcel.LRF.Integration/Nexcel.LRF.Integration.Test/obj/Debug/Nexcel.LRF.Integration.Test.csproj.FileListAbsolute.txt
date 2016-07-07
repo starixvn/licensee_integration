@@ -1,7 +1,0 @@
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\bin\Debug\Nexcel.LRF.Integration.Test.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\bin\Debug\Nexcel.LRF.Integration.Test.pdb
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\bin\Debug\nunit.framework.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\bin\Debug\nunit.framework.xml
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\obj\Debug\Nexcel.LRF.Integration.Test.csprojResolveAssemblyReference.cache
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\obj\Debug\Nexcel.LRF.Integration.Test.dll
-D:\TeamProject\GIT_LAB\LRF\integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration\Nexcel.LRF.Integration.Test\obj\Debug\Nexcel.LRF.Integration.Test.pdb
