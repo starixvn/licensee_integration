@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Nexcel.LRF.Integration.Configurations;
 using System.IO;
-using RSACryptoPad;
 using System.Text.RegularExpressions;
+using Nexcel.LRF.Integration.Configurations;
+using RSACryptoPad;
 
 namespace Nexcel.LRF.Integration
 {
@@ -14,10 +12,12 @@ namespace Nexcel.LRF.Integration
         private readonly Regex UrlRegularExpression = new Regex("(http|https):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
 
         private IIntegrationSettings _settings;
+
         public UrlFactory()
             : this(null)
         {
         }
+
         public UrlFactory(IIntegrationSettings settings)
         {
             this._settings = (settings ?? new IntegrationSettings());
@@ -43,14 +43,14 @@ namespace Nexcel.LRF.Integration
                 throw new Exception(string.Format(Resources.InvalidUrlFormat, "SsoUrl"));
             }
             string inputString = string.Format(EncryptedParamPattern, new object[]
-			{
-				this._settings.LicenseeName,
-				model.Username,
-				model.EncryptedPassword,
-				model.Timestamp,
-				this._settings.InternalLoginUrl,
-				model.LanguageCode
-			});
+            {
+                this._settings.LicenseeName,
+                model.Username,
+                model.EncryptedPassword,
+                model.Timestamp,
+                this._settings.InternalLoginUrl,
+                model.LanguageCode
+            });
             EncryptionThread encryptionThread = new EncryptionThread();
             string str = encryptionThread.EncryptString(inputString, 1024, publicKeyPath);
             return string.IsNullOrEmpty(model.ActiveDomain) ? this._settings.SsoUrl + "?key=" + str

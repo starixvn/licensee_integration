@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Configuration;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -11,6 +9,7 @@ namespace Nexcel.LRF.Integration.Configurations
     {
         private static IntegrationSettings settings = ConfigurationManager.GetSection("Nexcel.LRF.Integration") as IntegrationSettings;
         private static readonly Regex UrlRegularExpression = new Regex("(http|https):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
+
         public static IntegrationSettings Settings
         {
             get
@@ -18,6 +17,7 @@ namespace Nexcel.LRF.Integration.Configurations
                 return IntegrationSettings.settings;
             }
         }
+
         [ConfigurationProperty("PublicKeyPath", IsRequired = true)]
         public string PublicKeyPath
         {
@@ -43,6 +43,7 @@ namespace Nexcel.LRF.Integration.Configurations
                 IntegrationSettings.settings["PublicKeyPath"] = value;
             }
         }
+
         [ConfigurationProperty("SsoUrl", IsRequired = true)]
         public string SsoUrl
         {
@@ -64,6 +65,7 @@ namespace Nexcel.LRF.Integration.Configurations
                 IntegrationSettings.settings["SsoUrl"] = value;
             }
         }
+
         [ConfigurationProperty("InternalLoginUrl", IsRequired = true)]
         public string InternalLoginUrl
         {
@@ -85,6 +87,7 @@ namespace Nexcel.LRF.Integration.Configurations
                 IntegrationSettings.settings["InternalLoginUrl"] = value;
             }
         }
+
         [ConfigurationProperty("LicenseeName", IsRequired = true)]
         public string LicenseeName
         {
@@ -101,7 +104,5 @@ namespace Nexcel.LRF.Integration.Configurations
                 IntegrationSettings.settings["LicenseeName"] = value;
             }
         }
-       
-
     }
 }

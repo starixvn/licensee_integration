@@ -1,13 +1,7 @@
 using System;
-using System.Data;
-using System.Configuration;
-using System.Web;
+using System.Collections.Generic;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using System.Collections.Generic;
 
 public partial class _Login : System.Web.UI.Page
 {
@@ -26,12 +20,12 @@ public partial class _Login : System.Web.UI.Page
         ListUsers = new List<string>();
         ListUsers.Add("12bet01");
         ListUsers.Add("spon02");
-		ListUsers.Add("spon03");
-		ListUsers.Add("spon07");
-		ListUsers.Add("spon08");
-		ListUsers.Add("spon09");
-		ListUsers.Add("spon11");
-		ListUsers.Add("spon12");
+        ListUsers.Add("spon03");
+        ListUsers.Add("spon07");
+        ListUsers.Add("spon08");
+        ListUsers.Add("spon09");
+        ListUsers.Add("spon11");
+        ListUsers.Add("spon12");
         ListUsers.Add("KiwiTest");
     }
 
@@ -46,7 +40,7 @@ public partial class _Login : System.Web.UI.Page
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
         if (ValidateUser(txtUserName.Text.Trim().ToLower(), txtPassword.Text))
-            FormsAuthentication.RedirectFromLoginPage(txtUserName.Text.Trim().ToLower(), true);             
+            FormsAuthentication.RedirectFromLoginPage(txtUserName.Text.Trim().ToLower(), true);
 
         lblMessage.Text = "Login fail!";
     }

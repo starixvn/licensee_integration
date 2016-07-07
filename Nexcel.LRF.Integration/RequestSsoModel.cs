@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nexcel.LRF.Integration
+﻿namespace Nexcel.LRF.Integration
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class RequestSsoModel : IRequestSsoModel
     {
@@ -13,10 +9,12 @@ namespace Nexcel.LRF.Integration
         {
             this.LanguageCode = "en-US";
         }
+
         private string _langaugeCode;
         private string _username;
         private string _encryptedPassword;
         private long _timeStamp;
+
         /// <summary>
         /// Required:true
         /// </summary>
@@ -31,6 +29,7 @@ namespace Nexcel.LRF.Integration
                 this._username = value;
             }
         }
+
         /// <summary>
         /// Required:true
         /// </summary>
@@ -45,6 +44,7 @@ namespace Nexcel.LRF.Integration
                 this._encryptedPassword = value;
             }
         }
+
         /// <summary>
         /// Required:true
         /// </summary>
@@ -59,6 +59,7 @@ namespace Nexcel.LRF.Integration
                 this._timeStamp = value;
             }
         }
+
         public bool IsValid
         {
             get
@@ -75,7 +76,7 @@ namespace Nexcel.LRF.Integration
         /// Default Value= en-US
         /// The language Value is the national language code
         /// example:en-US,zh-TW,zh-CN
-        /// for more language code ,plz go to:http://msdn.microsoft.com/en-us/library/ms533052(v=vs.85).aspx 
+        /// for more language code ,plz go to:http://msdn.microsoft.com/en-us/library/ms533052(v=vs.85).aspx
         /// Required:true
         /// </summary>
         public string LanguageCode
@@ -83,6 +84,7 @@ namespace Nexcel.LRF.Integration
             get { return _langaugeCode; }
             set { this._langaugeCode = value; }
         }
+
         /// <summary>
         /// if ActiveDomain is null or Empty,the system will use domain in webcongif file
         /// </summary>
