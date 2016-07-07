@@ -5,26 +5,26 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexcel.LRF.Integration", "Nexcel.LRF.Integration\Nexcel.LRF.Integration.csproj", "{50CE695F-1458-4087-A945-3E4AB818DCCA}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InternalSimulator", "..\..\InternalSimulator\", "{A28A58FE-184D-4604-A841-3C45F6429752}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InternalSimulator", "InternalSimulator\", "{A28A58FE-184D-4604-A841-3C45F6429752}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		ProjectReferences = "{50CE695F-1458-4087-A945-3E4AB818DCCA}|Nexcel.LRF.Integration.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/InternalSimulator"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\InternalSimulator\"
+		Debug.AspNetCompiler.PhysicalPath = "InternalSimulator\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\InternalSimulator\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/InternalSimulator"
-		Release.AspNetCompiler.PhysicalPath = "..\..\InternalSimulator\"
+		Release.AspNetCompiler.PhysicalPath = "InternalSimulator\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\InternalSimulator\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "53920"
-		SlnRelativePath = "..\..\InternalSimulator\"
+		SlnRelativePath = "InternalSimulator\"
 	EndProjectSection
 EndProject
 Global
