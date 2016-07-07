@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexcel.LRF.Integration", "N
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "InternalSimulator", "InternalSimulator\", "{A28A58FE-184D-4604-A841-3C45F6429752}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{50CE695F-1458-4087-A945-3E4AB818DCCA}|Nexcel.LRF.Integration.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/InternalSimulator"
 		Debug.AspNetCompiler.PhysicalPath = "InternalSimulator\"
