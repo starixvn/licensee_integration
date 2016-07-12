@@ -11,6 +11,11 @@ namespace SSOSimulator.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (Session["UserName"] != null)
+            {
+                return RedirectToLocal(returnUrl);
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
