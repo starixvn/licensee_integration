@@ -32,7 +32,7 @@ namespace SSOSimulator.Controllers
                 return View(model);
             }
 
-            var result = GetUserLogin(model.UserName);
+            var result = GetUserLogin(model.UserName, model.LicenseeId);
 
             if (model.Password.Equals(ConfigurationManager.AppSettings["LoginPassword"]) && result != null)
             {
@@ -65,15 +65,16 @@ namespace SSOSimulator.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private static LoginResultViewModel GetUserLogin(string userName)
+        private static LoginResultViewModel GetUserLogin(string userName, string licenseeId)
         {
             using (SqlConnection sqlConnection =
             new SqlConnection(ConfigurationManager.ConnectionStrings["demo"].ToString()))
             {
-                using (SqlCommand sqlCommand = new SqlCommand(
-                    "Select UserPwd, LicenseeName from Users where Username = @Username", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("Lrf_UserInfoSelByUserName", sqlConnection))
                 {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.Add("@Username", SqlDbType.VarChar).Value = userName;
+                    sqlCommand.Parameters.Add("@LicenseeId", SqlDbType.Int).Value = licenseeId;
                     sqlConnection.Open();
                     var reader = sqlCommand.ExecuteReader();
 
@@ -84,14 +85,24 @@ namespace SSOSimulator.Controllers
                             return new LoginResultViewModel
                             {
                                 UserName = userName,
-                                EncryptedPassword = reader.GetString(0),
-                                LicenseeName = reader.GetString(1)
+                                EncryptedPassword = reader.GetString(reader.GetOrdinal("password")),
+                                LicenseeName = GetLicenseeNameById(licenseeId)
                             };
                         }
                     }
 
                     return null;
                 }
+            }
+        }
+
+        private static string GetLicenseeNameById(string licenseeId)
+        {
+            switch (licenseeId)
+            {
+                case "1": return "12bet";
+                case "3": return "mansion88";
+                default: return "12bet";
             }
         }
     }

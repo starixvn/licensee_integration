@@ -12,5 +12,9 @@ namespace SSOSimulator.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Licensee")]
+        public string LicenseeId { get; set; }
     }
 }
