@@ -89,5 +89,7 @@
         /// if ActiveDomain is null or Empty,the system will use domain in webcongif file
         /// </summary>
         public string ActiveDomain { get; set; }
+
+        public string LicenseeName { get; set; }
     }
 }

@@ -34,5 +34,7 @@
         string LanguageCode { get; set; }
 
         string ActiveDomain { get; set; }
+
+        string LicenseeName { get; set; }
     }
 }

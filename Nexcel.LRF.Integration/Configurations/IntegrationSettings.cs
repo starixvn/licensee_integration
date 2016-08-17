@@ -7,8 +7,8 @@ namespace Nexcel.LRF.Integration.Configurations
 {
     public class IntegrationSettings : ConfigurationSection, IIntegrationSettings
     {
-        private static IntegrationSettings settings = ConfigurationManager.GetSection("Nexcel.LRF.Integration") as IntegrationSettings;
         private static readonly Regex UrlRegularExpression = new Regex("(http|https):\\/\\/([\\w@][\\w.:@]+)\\/?[\\w\\.?=%&=\\-@/$,]*");
+        private static IntegrationSettings settings = ConfigurationManager.GetSection("Nexcel.LRF.Integration") as IntegrationSettings;
 
         public static IntegrationSettings Settings
         {
@@ -27,6 +27,7 @@ namespace Nexcel.LRF.Integration.Configurations
                 {
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "PublicKeyPath"));
                 }
+
                 string text = IntegrationSettings.settings["PublicKeyPath"].ToString();
                 if (text.StartsWith("~/"))
                 {
@@ -34,10 +35,13 @@ namespace Nexcel.LRF.Integration.Configurations
                     {
                         throw new NullReferenceException(Resources.HttpContextNullException);
                     }
+
                     text = HttpContext.Current.Server.MapPath(text);
                 }
+
                 return text;
             }
+
             set
             {
                 IntegrationSettings.settings["PublicKeyPath"] = value;
@@ -53,13 +57,16 @@ namespace Nexcel.LRF.Integration.Configurations
                 {
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "SsoUrl"));
                 }
+
                 string text = IntegrationSettings.settings["SsoUrl"].ToString();
                 if (!IntegrationSettings.UrlRegularExpression.IsMatch(text))
                 {
                     throw new Exception(string.Format(Resources.InvalidUrlFormat, "SsoUrl"));
                 }
+
                 return text;
             }
+
             set
             {
                 IntegrationSettings.settings["SsoUrl"] = value;
@@ -75,13 +82,16 @@ namespace Nexcel.LRF.Integration.Configurations
                 {
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "InternalLoginUrl"));
                 }
+
                 string text = IntegrationSettings.settings["InternalLoginUrl"].ToString();
                 if (!IntegrationSettings.UrlRegularExpression.IsMatch(text))
                 {
                     throw new Exception(string.Format(Resources.InvalidUrlFormat, "InternalLoginUrl"));
                 }
+
                 return text;
             }
+
             set
             {
                 IntegrationSettings.settings["InternalLoginUrl"] = value;
@@ -97,8 +107,10 @@ namespace Nexcel.LRF.Integration.Configurations
                 {
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "LicenseeName"));
                 }
+
                 return IntegrationSettings.settings["LicenseeName"].ToString();
             }
+
             set
             {
                 IntegrationSettings.settings["LicenseeName"] = value;

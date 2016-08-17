@@ -44,7 +44,7 @@ namespace Nexcel.LRF.Integration
             }
             string inputString = string.Format(EncryptedParamPattern, new object[]
             {
-                this._settings.LicenseeName,
+                model.LicenseeName,
                 model.Username,
                 model.EncryptedPassword,
                 model.Timestamp,

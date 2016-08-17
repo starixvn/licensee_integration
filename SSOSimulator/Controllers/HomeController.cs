@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Nexcel.LRF.Integration;
 using Nexcel.LRF.Integration.Configurations;
+using SSOSimulator.Models;
 
 namespace SSOSimulator.Controllers
 {
@@ -38,11 +39,14 @@ namespace SSOSimulator.Controllers
                 activeDomain = GetActiveDomain();
             }
 
+            var userLogin = Session["UserLogin"] as LoginResultViewModel;           
+
             //create request sso model
             RequestSsoModel requestModel = new RequestSsoModel();
             requestModel.Username = HttpContext.User.Identity.Name;
 
-            requestModel.EncryptedPassword = ConfigurationManager.AppSettings["UserPassword"];
+            requestModel.EncryptedPassword = userLogin.EncryptedPassword;
+            requestModel.LicenseeName = userLogin.LicenseeName;
             requestModel.Timestamp = GetDbTimeStamp();
             requestModel.ActiveDomain = activeDomain;
             requestModel.LanguageCode = "en-US";

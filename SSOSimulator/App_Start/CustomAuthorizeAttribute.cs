@@ -21,7 +21,7 @@ namespace SSOSimulator.App_Start
             {
                 base.OnAuthorization(filterContext);
                 
-                if (filterContext.HttpContext.Session["UserName"] == null)
+                if (filterContext.HttpContext.Session["UserLogin"] == null)
                 {
                     var routeValue = new
                     {
