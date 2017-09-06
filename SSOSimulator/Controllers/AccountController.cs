@@ -102,6 +102,7 @@ namespace SSOSimulator.Controllers
             {
                 case "1": return "12bet";
                 case "3": return "mansion88";
+                case "5": return "spondemo";
                 default: return "12bet";
             }
         }
