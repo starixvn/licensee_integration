@@ -50,6 +50,7 @@ namespace SSOSimulator.Controllers
             requestModel.Timestamp = GetDbTimeStamp();
             requestModel.ActiveDomain = activeDomain;
             requestModel.LanguageCode = "en-US";
+            requestModel.LicenseeName = "12bet";
             //generate sso link
             UrlFactory urlFactory = new UrlFactory();
             string ssoUrl = urlFactory.GenerateSsoLink(requestModel);
