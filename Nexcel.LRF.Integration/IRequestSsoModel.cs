@@ -36,5 +36,6 @@
         string ActiveDomain { get; set; }
 
         string LicenseeName { get; set; }
+        string InternalLoginUrl { get; set; }
     }
 }

@@ -4,7 +4,6 @@
     {
         public const string SsoUrl = "SsoUrl";
         public const string PublicKeyPath = "PublicKeyPath";
-        public const string InternalLoginUrl = "InternalLoginUrl";
-        public const string LicenseeName = "LicenseeName";
+      
     }
 }

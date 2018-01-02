@@ -34,26 +34,27 @@ namespace SSOSimulator.Controllers
             if (!Request.IsAuthenticated)
                 FormsAuthentication.RedirectToLoginPage();
             var activeDomain = IntegrationSettings.Settings.SsoUrl;
-            if(string.IsNullOrEmpty(activeDomain))
+            if (string.IsNullOrEmpty(activeDomain))
             {
                 activeDomain = GetActiveDomain();
             }
 
-            var userLogin = Session["UserLogin"] as LoginResultViewModel;           
+            var userLogin = Session["UserLogin"] as LoginResultViewModel;
 
             //create request sso model
-            RequestSsoModel requestModel = new RequestSsoModel();
-            requestModel.Username = HttpContext.User.Identity.Name;
-
-            requestModel.EncryptedPassword = userLogin.EncryptedPassword;
-            requestModel.LicenseeName = userLogin.LicenseeName;
-            requestModel.Timestamp = GetDbTimeStamp();
-            requestModel.ActiveDomain = activeDomain;
-            requestModel.LanguageCode = "en-US";
-            requestModel.LicenseeName = "12bet";
+            var requestModel = new RequestSsoModel
+            {
+                Username = HttpContext.User.Identity.Name,
+                EncryptedPassword = userLogin.EncryptedPassword,
+                Timestamp = GetDbTimeStamp(),
+                ActiveDomain = activeDomain,
+                LanguageCode = "en-US",
+                LicenseeName = "dafabet",
+                InternalLoginUrl = "http://admin.dafabet.com/"
+            };
             //generate sso link
-            UrlFactory urlFactory = new UrlFactory();
-            string ssoUrl = urlFactory.GenerateSsoLink(requestModel);
+            var urlFactory = new UrlFactory();
+            var ssoUrl = urlFactory.GenerateSsoLink(requestModel);
             Response.Redirect(ssoUrl);
         }
 

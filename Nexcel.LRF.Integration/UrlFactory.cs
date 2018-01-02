@@ -33,7 +33,7 @@ namespace Nexcel.LRF.Integration
             {
                 throw new Exception(Resources.InvalidRequestModel);
             }
-            string publicKeyPath = this._settings.PublicKeyPath;
+            var publicKeyPath = this._settings.PublicKeyPath;
             if (!File.Exists(publicKeyPath))
             {
                 throw new FileNotFoundException(publicKeyPath);
@@ -42,17 +42,17 @@ namespace Nexcel.LRF.Integration
             {
                 throw new Exception(string.Format(Resources.InvalidUrlFormat, "SsoUrl"));
             }
-            string inputString = string.Format(EncryptedParamPattern, new object[]
+            var inputString = string.Format(EncryptedParamPattern, new object[]
             {
                 model.LicenseeName,
                 model.Username,
                 model.EncryptedPassword,
                 model.Timestamp,
-                this._settings.InternalLoginUrl,
+                model.InternalLoginUrl,
                 model.LanguageCode
             });
-            EncryptionThread encryptionThread = new EncryptionThread();
-            string str = encryptionThread.EncryptString(inputString, 1024, publicKeyPath);
+            var encryptionThread = new EncryptionThread();
+            var str = encryptionThread.EncryptString(inputString, 1024, publicKeyPath);
             return string.IsNullOrEmpty(model.ActiveDomain) ? this._settings.SsoUrl + "?key=" + str
                 : model.ActiveDomain + "?key=" + str;
         }

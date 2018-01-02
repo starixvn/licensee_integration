@@ -17,16 +17,5 @@
             set;
         }
 
-        string InternalLoginUrl
-        {
-            get;
-            set;
-        }
-
-        string LicenseeName
-        {
-            get;
-            set;
-        }
     }
 }

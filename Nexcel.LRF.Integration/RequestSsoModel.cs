@@ -1,4 +1,6 @@
-﻿namespace Nexcel.LRF.Integration
+﻿using System;
+
+namespace Nexcel.LRF.Integration
 {
     /// <summary>
     ///
@@ -91,5 +93,8 @@
         public string ActiveDomain { get; set; }
 
         public string LicenseeName { get; set; }
+
+        public string InternalLoginUrl { get; set; }
+
     }
 }

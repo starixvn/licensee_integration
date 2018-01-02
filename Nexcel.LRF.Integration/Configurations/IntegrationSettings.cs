@@ -28,7 +28,7 @@ namespace Nexcel.LRF.Integration.Configurations
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "PublicKeyPath"));
                 }
 
-                string text = IntegrationSettings.settings["PublicKeyPath"].ToString();
+                var text = IntegrationSettings.settings["PublicKeyPath"].ToString();
                 if (text.StartsWith("~/"))
                 {
                     if (HttpContext.Current == null)
@@ -58,7 +58,7 @@ namespace Nexcel.LRF.Integration.Configurations
                     throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "SsoUrl"));
                 }
 
-                string text = IntegrationSettings.settings["SsoUrl"].ToString();
+                var text = IntegrationSettings.settings["SsoUrl"].ToString();
                 if (!IntegrationSettings.UrlRegularExpression.IsMatch(text))
                 {
                     throw new Exception(string.Format(Resources.InvalidUrlFormat, "SsoUrl"));
@@ -72,49 +72,6 @@ namespace Nexcel.LRF.Integration.Configurations
                 IntegrationSettings.settings["SsoUrl"] = value;
             }
         }
-
-        [ConfigurationProperty("InternalLoginUrl", IsRequired = true)]
-        public string InternalLoginUrl
-        {
-            get
-            {
-                if (object.ReferenceEquals(IntegrationSettings.settings["InternalLoginUrl"], null) || string.IsNullOrEmpty(IntegrationSettings.settings["InternalLoginUrl"].ToString()))
-                {
-                    throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "InternalLoginUrl"));
-                }
-
-                string text = IntegrationSettings.settings["InternalLoginUrl"].ToString();
-                if (!IntegrationSettings.UrlRegularExpression.IsMatch(text))
-                {
-                    throw new Exception(string.Format(Resources.InvalidUrlFormat, "InternalLoginUrl"));
-                }
-
-                return text;
-            }
-
-            set
-            {
-                IntegrationSettings.settings["InternalLoginUrl"] = value;
-            }
-        }
-
-        [ConfigurationProperty("LicenseeName", IsRequired = true)]
-        public string LicenseeName
-        {
-            get
-            {
-                if (object.ReferenceEquals(IntegrationSettings.settings["LicenseeName"], null) || string.IsNullOrEmpty(IntegrationSettings.settings["LicenseeName"].ToString()))
-                {
-                    throw new ConfigurationErrorsException(string.Format(Resources.ConfigurationRequired, "LicenseeName"));
-                }
-
-                return IntegrationSettings.settings["LicenseeName"].ToString();
-            }
-
-            set
-            {
-                IntegrationSettings.settings["LicenseeName"] = value;
-            }
-        }
+      
     }
 }
